@@ -5,85 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SonaQ | Цифровое Завтра</title>
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        /* Простые neon-стили прямо здесь для быстрого старта */
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', system-ui, sans-serif;
-            background: #0a0a0a;
-            color: #e0e0e0;
-            line-height: 1.6;
-        }
-        .neon-text {
-            text-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff;
-            color: #00f7ff;
-        }
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            background: linear-gradient(135deg, #1a0033, #000000);
-            position: relative;
-            overflow: hidden;
-        }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(0, 247, 255, 0.03) 10px, rgba(0, 247, 255, 0.03) 20px);
-        }
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(10, 10, 10, 0.95);
-            padding: 1rem;
-            z-index: 100;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-    </style>
 </head>
 <body>
     <nav>
-        <div class="container">
-            <h2>SonaQ</h2>
-            <a href="#releases">Релизы</a>
-            <a href="#about">О проекте</a>
-            <a href="#contact">Контакты</a>
+        <div class="nav-container">
+            <h2 class="logo">SONAQ</h2>
+            <div class="nav-links">
+                <a href="#home">Главная</a>
+                <a href="#releases">Релизы</a>
+                <a href="#about">О проекте</a>
+                <a href="#contact">Контакты</a>
+            </div>
         </div>
     </nav>
 
-    <section class="hero">
-        <div class="container">
-            <h1 class="neon-text">SONAQ</h1>
-            <p style="font-size: 1.5rem; margin: 1rem 0;">Цифровое Завтра</p>
-            <p>AI-generated cyberpunk & experimental music</p>
-            <p><strong>Скоро первые релизы</strong></p>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="neon-title">Цифровое Завтра</h1>
+            <p class="tagline">AI-generated cyberpunk & experimental music</p>
+            <p class="status">Скоро первые релизы • 2026</p>
         </div>
     </section>
 
-    <section id="releases" class="container">
-        <h2>Релизы</h2>
-        <p>Пока в разработке. Ожидайте атмосферные инструменталы и треки вроде "Давайте жить дружно".</p>
-        <!-- Здесь позже добавим карточки -->
+    <section id="releases" class="section">
+        <div class="container">
+            <h2>Предстоящие Релизы</h2>
+            <div class="releases-grid">
+                <div class="release-card">
+                    <h3>Давайте жить дружбо</h3>
+                    <p>Тёплая atmospheric track</p>
+                    <p><em>Скоро</em></p>
+                </div>
+                <!-- Добавляй новые карточки сюда -->
+            </div>
+        </div>
     </section>
 
-    <section id="about" class="container">
-        <h2>О проекте</h2>
-        <p>Техно-номад в неоновом мире. Экспериментальная AI-музыка от ambient до cyber-electronic.</p>
+    <section id="about" class="section">
+        <div class="container">
+            <h2>О SonaQ</h2>
+            <p>Техно-номад в неоновом мире. Экспериментальная музыка, созданная с помощью ИИ: от ambient до cyber-electronic.</p>
+        </div>
     </section>
 
-    <footer class="container">
-        <p>&copy; 2026 SonaQ. All rights reserved.</p>
+    <footer id="contact">
+        <div class="container">
+            <p>Связаться: sonaq.studio@gmail.com (или Telegram)</p>
+            <p>&copy; 2026 SonaQ. Digital Hermit Music.</p>
+        </div>
     </footer>
 </body>
 </html>
