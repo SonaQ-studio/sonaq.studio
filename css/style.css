@@ -88,6 +88,9 @@ nav {
 }
 
 .release-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
     background: #1a1a2e;
     padding: 2rem;
     border-radius: 12px;
