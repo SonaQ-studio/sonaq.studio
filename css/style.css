@@ -346,6 +346,60 @@ nav {
     color: #e0e0e0;
 }
 
+/* Album tracklist */
+.tracklist {
+    list-style: none;
+    counter-reset: track;
+    margin: 0 0 1.5rem;
+    padding: 0;
+    background: #1a1a2e;
+    border: 1px solid #00f7ff22;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.tracklist li {
+    counter-increment: track;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5rem 1rem;
+    padding: 0.9rem 1.2rem;
+    border-bottom: 1px solid #00f7ff15;
+    color: #e8e8e8;
+}
+
+.tracklist li:last-child {
+    border-bottom: none;
+}
+
+.tracklist li::before {
+    content: counter(track);
+    color: #00f7ff;
+    font-weight: 700;
+    min-width: 1.5rem;
+    opacity: 0.9;
+}
+
+.tracklist li strong {
+    color: #f5f5f5;
+    font-weight: 600;
+}
+
+.track-meta {
+    font-size: 0.9rem;
+    color: #b0b0b0;
+}
+
+.track-meta a {
+    color: #00f7ff;
+    text-decoration: none;
+}
+
+.track-meta a:hover {
+    text-decoration: underline;
+}
+
 .embed-container {
     margin-top: 1rem;
     border-radius: 8px;
