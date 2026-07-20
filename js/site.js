@@ -1,9 +1,68 @@
 /**
  * Общая шапка, подвал и список «Другие релизы» для SonaQ.
  * base path ("" | "../") — по URL.
+ *
+ * Аналитика: впиши ID ниже. Пустая строка = не подключать.
+ * Яндекс.Метрика: https://metrika.yandex.ru/ → номер счётчика (цифры)
+ * Google Analytics 4: https://analytics.google.com/ → Measurement ID (G-XXXXXXXX)
  */
 (function () {
-  var ASSET_V = "20260720";
+  var ASSET_V = "20260722";
+
+  // === Аналитика ===
+  var YANDEX_METRIKA_ID = "110894233";
+  var GA_MEASUREMENT_ID = ""; // Google не подключаем
+
+  function loadYandexMetrika(id) {
+    if (!id) return;
+    window.ym =
+      window.ym ||
+      function () {
+        (window.ym.a = window.ym.a || []).push(arguments);
+      };
+    window.ym.l = 1 * new Date();
+    var s = document.createElement("script");
+    s.async = true;
+    s.src = "https://mc.yandex.ru/metrika/tag.js";
+    document.head.appendChild(s);
+    window.ym(Number(id), "init", {
+      clickmap: true,
+      trackLinks: true,
+      accurateTrackBounce: true,
+      webvisor: true,
+    });
+    // noscript pixel
+    var noscript = document.createElement("noscript");
+    noscript.innerHTML =
+      '<div><img src="https://mc.yandex.ru/watch/' +
+      id +
+      '" style="position:absolute;left:-9999px;" alt="" /></div>';
+    document.body.appendChild(noscript);
+  }
+
+  function loadGoogleAnalytics(id) {
+    if (!id) return;
+    var s = document.createElement("script");
+    s.async = true;
+    s.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(id);
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      window.dataLayer.push(arguments);
+    }
+    window.gtag = gtag;
+    gtag("js", new Date());
+    gtag("config", id);
+  }
+
+  function initAnalytics() {
+    try {
+      loadYandexMetrika(YANDEX_METRIKA_ID);
+      loadGoogleAnalytics(GA_MEASUREMENT_ID);
+    } catch (e) {
+      /* ignore analytics errors */
+    }
+  }
 
   function getBase() {
     var path = (window.location.pathname || "").replace(/\\/g, "/");
@@ -137,6 +196,7 @@
     });
 
     fillOtherReleases();
+    initAnalytics();
   }
 
   if (document.readyState === "loading") {
