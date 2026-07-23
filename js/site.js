@@ -92,7 +92,7 @@
     { id: "cifrovoy-haos", title: "Цифровой Хаос", href: "cifrovoy-haos.html" },
     { id: "zhit-druzhno", title: "Жить Дружно", href: "zhit-druzhno.html" },
     { id: "elektro", title: "Электро", href: "elektro.html" },
-    { id: "kod-v-moih-venah", title: "Код в моих венах", href: "kod-v-moih-venah.html" },
+    { id: "kod-v-moih-venah", title: "Цифровое завтра", href: "kod-v-moih-venah.html" },
     { id: "cifrovoe-zavtra", title: "Цифровое Завтра", href: "cifrovoe-zavtra.html" },
     { id: "8bitnaya-nostalgiya", title: "8битная настальгия", href: "8bitnaya-nostalgiya.html" },
     { id: "skazochnyy-memolog", title: "Сказочный мемолог", href: "skazochnyy-memolog.html" }
